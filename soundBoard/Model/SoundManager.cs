@@ -28,7 +28,7 @@ namespace soundBoard.Model
         {
             var allSounds = getSounds();
             var filteredSounds = allSounds.Where(p => p.Name == name).ToList();
-            sounds.Clear();
+            sounds.Clear();// clears collection of anything in there
             filteredSounds.ForEach(p => sounds.Add(p));
         }
 
