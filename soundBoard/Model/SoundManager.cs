@@ -29,7 +29,7 @@ namespace soundBoard.Model
             var allSounds = getSounds();
             var filteredSounds = allSounds.Where(p => p.Name == name).ToList();
             sounds.Clear();// clears collection of anything in there
-            filteredSounds.ForEach(p => sounds.Add(p));
+            filteredSounds.ForEach(p => sounds.Add(p));// reads in all sounds and populates the collection by name
         }
 
 

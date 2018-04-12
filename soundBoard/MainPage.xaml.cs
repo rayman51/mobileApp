@@ -46,29 +46,29 @@ namespace soundBoard
 
         private void HambergerButton_Click(object sender, RoutedEventArgs e)
         {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;// make button open pane
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;// makes the  button open pane
         }//HambergerButton_Click
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             SearchAutoSuggestBox.Text = "";// clears text box on click
-            SoundManager.GetAllSounds(Sounds);// displays all sound to screen
+            SoundManager.GetAllSounds(Sounds);// displays all sounds to screen
             CategoryTextBlock.Text = "All Sounds";
             MenuItemsListView.SelectedItem = null;
-            BackButton.Visibility = Visibility.Collapsed;// collapses after being used
+            BackButton.Visibility = Visibility.Collapsed;// hides back button
         }// BackButton_Click
 
         private void SearchAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
             if (String.IsNullOrEmpty(sender.Text)) goBack() ;// calls goBack if text box is empty
             SoundManager.GetAllSounds(Sounds);
-            Suggestions = Sounds.Where(p => p.Name.StartsWith(sender.Text)).Select(p => p.Name).ToList();// take first letter in text box and searchs for a match to diplay to screen
+            Suggestions = Sounds.Where(p => p.Name.StartsWith(sender.Text)).Select(p => p.Name).ToList();// take first letter in text box and searchs through names for a match to diplay to screen
             SearchAutoSuggestBox.ItemsSource = Suggestions;// displays suggestion
         }//SearchAutoSuggestBox_TextChanged
 
         private void goBack()
         {
-            SoundManager.GetAllSounds(Sounds);      // loads all sounds to page
+            SoundManager.GetAllSounds(Sounds);// loads all sounds to screen
             CategoryTextBlock.Text = "All Sounds";
             MenuItemsListView.SelectedItem = null;
             BackButton.Visibility = Visibility.Collapsed;// closes back button
