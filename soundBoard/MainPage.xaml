@@ -26,7 +26,7 @@
                     Height="45"
                     Width="45"
                     Content="&#xE700;"
-                    />
+                    /><!--menu button  -->
 
             <Button Name ="BackButton"
                     RelativePanel.RightOf="HambergerButton"
@@ -36,7 +36,7 @@
                     Height="45"
                     Width="45"
                     Content="&#xE0A6;"
-                    />
+                    /><!--back button  -->
             <AutoSuggestBox Name="SearchAutoSuggestBox"
                             PlaceholderText="Search For Sounds"
                             Width="200"
@@ -44,7 +44,7 @@
                             Margin="0,5,10,0"
                             TextChanged="SearchAutoSuggestBox_TextChanged"
                             QuerySubmitted="SearchAutoSuggestBox_QuerySubmitted"
-                            RelativePanel.AlignRightWithPanel="True"/>
+                            RelativePanel.AlignRightWithPanel="True"/><!--search box  -->
         </RelativePanel>
         
         <SplitView Grid.Row="1" Name="MySplitView"
@@ -56,19 +56,21 @@
                           IsItemClickEnabled="True" 
                           ItemsSource="{ x:Bind MenuItems}"
                           ItemClick="MenuItemsListView_ItemClick">
-                    <ListView.ItemTemplate>
+                    <ListView.ItemTemplate><!--menu button  -->
                         <DataTemplate x:DataType="data:MenuItem">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="{x:Bind IconFile}" 
                                        Height="35" 
                                        Width="35"
                                        Margin="-10,10,0,10"
-                                       />
+                                       /> <!--binds image to the collection of logos  -->
                                 <TextBlock 
                                     Text="{x:Bind Category}" 
                                     FontSize="18"
                                     Margin="10,0,0,0"
-                                    VerticalAlignment="Center"/>
+                                    VerticalAlignment="Center"
+                                    />
+                                <!--binds text displyed to the collection of categories -->
                             </StackPanel>
                         </DataTemplate>
 
@@ -97,12 +99,13 @@
                               IsItemClickEnabled="True"
                               ItemsSource="{x:Bind Sounds}"
                               ItemClick="SoundGridView_ItemClick">
+                        <!--on click binds image displyed to the collection of sounds -->
 
-
-                    <GridView.ItemTemplate>
+                        <GridView.ItemTemplate>
                             <DataTemplate x:DataType="data:Sound">
                                 <Image Name="MyImage" Height="125" Width="160" Source="{x:Bind ImageFile}" Stretch="UniformToFill"/>
-                        </DataTemplate>
+                            </DataTemplate>
+                            <!--binds image displyed to the collection of sounds -->
                         </GridView.ItemTemplate>
 
                     </GridView>
