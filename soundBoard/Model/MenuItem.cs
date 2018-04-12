@@ -10,7 +10,7 @@ namespace soundBoard.Model
     {
         public string IconFile { get; set; }
         public SoundCategory Category { get; set; }
-
+        // getter & setters 
 
 
 

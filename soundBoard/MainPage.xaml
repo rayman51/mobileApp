@@ -15,6 +15,7 @@
             <RowDefinition Height="*"/>
          
         </Grid.RowDefinitions>
+        
 
         <RelativePanel>
             <Button Name ="HambergerButton" 

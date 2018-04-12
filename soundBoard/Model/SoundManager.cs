@@ -12,16 +12,16 @@ namespace soundBoard.Model
         public static void GetAllSounds(ObservableCollection<Sound> sounds)
         {
             var allSounds = getSounds();
-            sounds.Clear();
-            allSounds.ForEach(p => sounds.Add(p));
+            sounds.Clear();// clears collection of anything in there
+            allSounds.ForEach(p => sounds.Add(p));// reads in all sounds and populates the collection
         }
 
         public static void GetSoundsByCategory(ObservableCollection<Sound> sounds, SoundCategory soundCategory)
         {
             var allSounds = getSounds();
             var filteredSounds = allSounds.Where(p => p.Category == soundCategory).ToList();
-            sounds.Clear();
-            filteredSounds.ForEach(p => sounds.Add(p));
+            sounds.Clear();// clears collection of anything in there
+            filteredSounds.ForEach(p => sounds.Add(p));// reads in all sounds and populates the collection by category
         }
 
         public static void GetSoundsByName(ObservableCollection<Sound> sounds, String name)
@@ -41,8 +41,8 @@ namespace soundBoard.Model
             //============================================
             // simpsons sounds
             sounds.Add(new Sound("homer", SoundCategory.Simpsons));
-            sounds.Add(new Sound("homer2", SoundCategory.Simpsons));
-            sounds.Add(new Sound("homer3", SoundCategory.Simpsons));
+            sounds.Add(new Sound("homer2", SoundCategory.Simpsons));// calls constructor from Sound
+            sounds.Add(new Sound("homer3", SoundCategory.Simpsons));// to add sounds and images
             
             sounds.Add(new Sound("moe", SoundCategory.Simpsons));
             sounds.Add(new Sound("moe2", SoundCategory.Simpsons));
