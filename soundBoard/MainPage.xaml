@@ -56,7 +56,7 @@
                           IsItemClickEnabled="True" 
                           ItemsSource="{ x:Bind MenuItems}"
                           ItemClick="MenuItemsListView_ItemClick">
-                    <ListView.ItemTemplate><!--menu button  -->
+                    <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:MenuItem">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="{x:Bind IconFile}" 

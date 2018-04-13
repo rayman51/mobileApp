@@ -88,7 +88,6 @@ namespace soundBoard
         {
             SearchAutoSuggestBox.Text = "";// clears text box
             var menuItem = (MenuItem)e.ClickedItem;
-
             // filter by category
             CategoryTextBlock.Text = menuItem.Category.ToString();// displys category name beside logo
             SoundManager.GetSoundsByCategory(Sounds, menuItem.Category);// groups the sounds by category
